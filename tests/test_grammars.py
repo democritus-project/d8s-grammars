@@ -1,13 +1,6 @@
-# -*- coding: utf-8 -*-
-
 from democritus_grammars import *
 
-import os
-import sys
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-from lists import list_flatten
+from democritus_grammars.grammars_temp_utils import list_flatten
 
 
 def test_pyparsing_parse_result_get_token_dict_1():

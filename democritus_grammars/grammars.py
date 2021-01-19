@@ -1,16 +1,12 @@
-# -*- coding: utf-8 -*-
-
 import sys
 
 import pyparsing
 from pyparsing import Word, Combine, Optional, WordStart, WordEnd, Or, CaselessLiteral, Regex, OneOrMore
 from pyparsing import alphas, nums, hexnums, alphanums, printables
 
-import decorators
-from strings import string_entropy
+from democritus_strings import string_entropy
 
 
-@decorators.map_first_arg
 def pyparsing_parse_result_get_token_dict(parse_result: pyparsing.ParseResults):
     """."""
     token_dict = parse_result._ParseResults__tokdict
@@ -84,7 +80,9 @@ metric_prefixes = Or(
 
 file_size_grammar = (
     Combine(
-        number + Or([Combine(metric_prefixes + Word('bB')), CaselessLiteral('bytes')]), adjacent=False, joinString=' ',
+        number + Or([Combine(metric_prefixes + Word('bB')), CaselessLiteral('bytes')]),
+        adjacent=False,
+        joinString=' ',
     )
     + alphanum_word_end
 )

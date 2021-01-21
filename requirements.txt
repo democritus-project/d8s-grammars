@@ -1,3 +1,4 @@
 democritus-strings @ git+https://github.com/democritus-project/democritus-strings.git#egg=democritus-strings
 more_itertools
 pyparsing
+importlib-metadata; python_version < '3.8'

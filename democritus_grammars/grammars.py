@@ -1,10 +1,23 @@
 import sys
 
 import pyparsing
-from pyparsing import Word, Combine, Optional, WordStart, WordEnd, Or, CaselessLiteral, Regex, OneOrMore
-from pyparsing import alphas, nums, hexnums, alphanums, printables
-
 from democritus_strings import string_entropy
+from pyparsing import (
+    CaselessLiteral,
+    Combine,
+    OneOrMore,
+    Optional,
+    Or,
+    Regex,
+    Word,
+    WordEnd,
+    WordStart,
+    alphanums,
+    alphas,
+    hexnums,
+    nums,
+    printables,
+)
 
 
 def pyparsing_parse_result_get_token_dict(parse_result: pyparsing.ParseResults):
@@ -91,13 +104,13 @@ file_size_grammar = (
 credential_regexes = {
     'twitter_api_token': '[1-9][0-9]+-[0-9a-zA-Z]{40}',
     'facebook_api_token': 'EAACEdEose0cBA[0-9A-Za-z]+',
-    'google_api_key': 'AIza[0-9A-Za-z\-_]{35}',
+    'google_api_key': r'AIza[0-9A-Za-z\-_]{35}',
     'google_oauth_id': '[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com',
     'picatic_api_key': 'sk_live_[0-9a-z]{32}',
     'stripe_standard_api_key': 'sk_live_[0-9a-zA-Z]{24}',
     'stripe_restricted_api_key': 'rk_live_[0-9a-zA-Z]{24}',
-    'square_access_token': 'sq0atp-[0-9A-Za-z\-_]{22}',
-    'square_oauth_secret': 'sq0csp-[0-9A-Za-z\-_]{43}',
+    'square_access_token': r'sq0atp-[0-9A-Za-z\-_]{22}',
+    'square_oauth_secret': r'sq0csp-[0-9A-Za-z\-_]{43}',
     'paypal_braintree_access_token': 'access_token\$production\$[0-9a-z]{16}\$[0-9a-f]{32}',
     'amazon_mws_auth_token': 'amzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}',
     'twilio_api_key': 'SK[0-9a-fA-F]{32}',
@@ -107,11 +120,11 @@ credential_regexes = {
     'amazon_aws_client_secret': '[0-9a-zA-Z/+=]{40}',
     'amazon_mws_aws_client_id': 'AKIA[0-9A-Z]{16}',
     'auth_token_aws_secret_key': '[0-9a-zA-Z/+=]{40}',
-    'google_oauth_secret': '[0-9a-zA-Z\-_]{24}',
-    'google_oauth_auth_code': '4/[0-9A-Za-z\-_]+',
-    'google_oauth_refresh_token': '1/[0-9A-Za-z\-_]{43}|1/[0-9A-Za-z\-_]{64}',
-    'google_oauth_access_token': 'ya29\.[0-9A-Za-z\-_]+',
-    'google_api_key': 'AIza[0-9A-Za-z\-_]{35}',
+    'google_oauth_secret': r'[0-9a-zA-Z\-_]{24}',
+    'google_oauth_auth_code': r'4/[0-9A-Za-z\-_]+',
+    'google_oauth_refresh_token': r'1/[0-9A-Za-z\-_]{43}|1/[0-9A-Za-z\-_]{64}',
+    'google_oauth_access_token': r'ya29\.[0-9A-Za-z\-_]+',
+    'google_api_key': r'AIza[0-9A-Za-z\-_]{35}',
     'twilio_api_secret': '[0-9a-zA-Z]{32}',
     'twitter_access_token_secret': '[0-9a-zA-Z]{45}',
 }

@@ -1,5 +1,4 @@
 from democritus_grammars import *
-
 from democritus_grammars.grammars_temp_utils import list_flatten
 
 

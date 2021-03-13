@@ -4,17 +4,17 @@ set -euxo pipefail
 
 echo "Running linters and formatters..."
 
-isort democritus_grammars/ tests/
+isort d8s_grammars/ tests/
 
-black democritus_grammars/ tests/
+black d8s_grammars/ tests/
 
-mypy democritus_grammars/ tests/
+mypy d8s_grammars/ tests/
 
-pylint --fail-under 9 democritus_grammars/*.py
+pylint --fail-under 9 d8s_grammars/*.py
 
-flake8 democritus_grammars/ tests/
+flake8 d8s_grammars/ tests/
 
-bandit -r democritus_grammars/
+bandit -r d8s_grammars/
 
 # we run black again at the end to undo any odd changes made by any of the linters above
-black democritus_grammars/ tests/
+black d8s_grammars/ tests/

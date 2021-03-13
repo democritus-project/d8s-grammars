@@ -1,5 +1,5 @@
-from democritus_grammars import *
-from democritus_grammars.grammars_temp_utils import list_flatten
+from d8s_grammars import *
+from d8s_grammars.grammars_temp_utils import list_flatten
 
 
 def test_pyparsing_parse_result_get_token_dict_1():

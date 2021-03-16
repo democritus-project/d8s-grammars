@@ -1,7 +1,7 @@
 import sys
 
 import pyparsing
-from democritus_strings import string_entropy
+from d8s_strings import string_entropy
 from pyparsing import (
     CaselessLiteral,
     Combine,

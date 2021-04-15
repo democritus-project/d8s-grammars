@@ -14,9 +14,12 @@ Democritus functions<sup>[1]</sup> for working with grammars.
 
 We use `d8s` as an abbreviation for `democritus` (you can read more about this [here](https://github.com/democritus-project/roadmap#what-is-d8s)).
 
-## Usage
+## Functions
 
-Coming soon...
+  - ```python
+    def pyparsing_parse_result_get_token_dict(parse_result: pyparsing.ParseResults):
+        """."""
+    ```
 
 ## Development
 

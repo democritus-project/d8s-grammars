@@ -1,4 +1,7 @@
-def list_flatten(list_arg: list, level: int = None, **kwargs) -> list:
+from typing import Optional
+
+
+def list_flatten(list_arg: list, level: Optional[int] = None, **kwargs) -> list:
     """Flatten all items in the list_arg so that they are all items in the same list."""
     import more_itertools
 
